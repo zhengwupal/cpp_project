@@ -10,8 +10,8 @@ target_include_directories(AbcFunctions
     $<INSTALL_INTERFACE:include>
 )
 
-target_link_libraries(AbcFunctions Boost::date_time Boost::regex tutorial_compiler_flags)
+target_link_libraries(AbcFunctions Boost::date_time Boost::regex)
 
-set(installable_libs AbcFunctions tutorial_compiler_flags)
+set(installable_libs AbcFunctions)
 install(TARGETS ${installable_libs} DESTINATION lib/module_a)
 install(FILES abc.h DESTINATION include/module_a)
