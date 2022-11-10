@@ -6,6 +6,7 @@
 #include <string>
 
 #include "abc.h"
+#include "yaml-cpp/yaml.h"
 
 using json = nlohmann::json;
 void test2() {
