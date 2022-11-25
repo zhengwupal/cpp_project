@@ -1,4 +1,4 @@
-#include "def.h"
+#include "pro/module_b/def.h"
 
 #include <fmt/core.h>
 #include <yaml-cpp/yaml.h>
@@ -8,7 +8,7 @@
 #include <nlohmann/json.hpp>
 #include <string>
 
-#include "abc.h"
+#include "pro/module_a/abc.h"
 
 void descriptor(IBase* obj) { obj->Describe(); }
 

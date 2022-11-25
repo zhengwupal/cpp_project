@@ -1,8 +1,8 @@
 #include <iostream>
 
-#include "CppProjectConfig.h"
-#include "module_a/abc.h"
-#include "module_b/def.h"
+#include "cppproject_config.h"
+#include "pro/module_a/abc.h"
+#include "pro/module_b/def.h"
 
 int main(int argc, char const *argv[]) {
   test1();

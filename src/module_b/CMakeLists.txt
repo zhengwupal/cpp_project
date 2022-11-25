@@ -21,13 +21,6 @@ find_package(Boost REQUIRED COMPONENTS date_time)
 
 include(FetchContent)
 FetchContent_Declare(
-  googletest
-  GIT_REPOSITORY https://github.com/google/googletest.git
-  GIT_TAG        release-1.12.1
-)
-FetchContent_MakeAvailable(googletest)
-
-FetchContent_Declare(
   json
   GIT_REPOSITORY https://github.com/nlohmann/json.git
   GIT_TAG        v3.11.2
@@ -57,14 +50,12 @@ FetchContent_MakeAvailable(yaml-cpp)
 
 add_library(OptFunctions def.cc)
 
-target_include_directories(OptFunctions
-    INTERFACE
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
-    $<INSTALL_INTERFACE:include>
+target_include_directories(OptFunctions PUBLIC
+    "${PROJECT_SOURCE_DIR}/include"
 )
 
 target_link_libraries(OptFunctions Boost::date_time AbcFunctions nlohmann_json::nlohmann_json yaml-cpp fmt::fmt)
 
 set(installable_libs OptFunctions)
-install(TARGETS ${installable_libs} DESTINATION lib/module_b)
-install(FILES def.h DESTINATION include/module_b)
+install(TARGETS ${installable_libs} DESTINATION lib/pro/module_b)
+install(FILES def.h DESTINATION include/pro/module_b)
