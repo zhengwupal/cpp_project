@@ -35,13 +35,6 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(fmt)
 
 FetchContent_Declare(
-  fmt
-  GIT_REPOSITORY https://github.com/fmtlib/fmt.git
-  GIT_TAG        9.1.0
-)
-FetchContent_MakeAvailable(fmt)
-
-FetchContent_Declare(
   yaml-cpp
   GIT_REPOSITORY https://github.com/jbeder/yaml-cpp.git
   GIT_TAG        yaml-cpp-0.7.0
