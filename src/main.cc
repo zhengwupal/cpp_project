@@ -7,6 +7,9 @@
 int main(int argc, char const *argv[]) {
   test1();
   test2();
+  test3();
+  test4();
+  test5();
   if (argc < 2) {
     // report version
     std::cout << argv[0] << " Version " << CppProject_VERSION_MAJOR << "."

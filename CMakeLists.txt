@@ -38,9 +38,12 @@ FetchContent_Declare(
   GIT_REPOSITORY https://github.com/google/benchmark.git
   GIT_TAG        v1.7.1
 )
+set(BENCHMARK_ENABLE_TESTING OFF)
+set(BENCHMARK_ENABLE_GTEST_TESTS OFF)
+set(BENCHMARK_USE_BUNDLED_GTEST OFF)
 FetchContent_MakeAvailable(benchmark)
 
-enable_testing()
+include(CTest)
 
 add_subdirectory(test/module_a)
 add_subdirectory(test/module_b)
