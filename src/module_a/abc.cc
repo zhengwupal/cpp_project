@@ -25,7 +25,8 @@ double mysqrt(double x) {
     // std::cout << "Computing sqrt of " << x << " to be " << result <<
     // std::endl;
   }
-
+  int *a = new int(3);
+  std::cout << "a: " << *a << std::endl;
   return result;
 }
 
@@ -92,6 +93,6 @@ void test4() {
 void test5() {
   std::map<std::string, size_t> counts;
   std::string word("abc");
-  auto result = counts.insert({word, 1}); // result is pair
+  auto result = counts.insert({word, 1});  // result is pair
   std::cout << result.first->second << std::endl;
 }
