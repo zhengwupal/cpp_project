@@ -11,7 +11,8 @@ configure_file(cppproject_config.h.in cppproject_config.h)
 ########################################
 add_subdirectory(src/module_a)
 add_subdirectory(src/module_b)
-list(APPEND LIBS AbcFunctions OptFunctions)
+add_subdirectory(src/mythread)
+list(APPEND LIBS AbcFunctions OptFunctions mythread)
 
 add_executable(main src/main.cc)
 target_link_libraries(main PUBLIC ${LIBS})
@@ -50,6 +51,7 @@ include(CTest)
 
 add_subdirectory(test/module_a)
 add_subdirectory(test/module_b)
+add_subdirectory(test/mythread)
 ########################################
 
 install(FILES "${PROJECT_BINARY_DIR}/cppproject_config.h"
