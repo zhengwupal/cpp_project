@@ -7,10 +7,10 @@
 
 namespace {
 
-// TEST(ThreadMutexTest, UniqueLock) {
-//   Task t;
-//   t.Process1();
-// }
+TEST(ThreadMutexTest, UniqueLock) {
+  Task t;
+  t.Process1();
+}
 
 TEST(ThreadMutexTest, AtomicInt) {
   Task t;
