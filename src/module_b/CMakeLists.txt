@@ -1,4 +1,4 @@
-find_package(Boost REQUIRED COMPONENTS date_time)
+find_package(Boost 1.80.0 REQUIRED COMPONENTS date_time)
 
 # set(thirdparty_DIR "/home/zhengwu/projects/cpp_project/src/thirdparty")
 # set(nlohmann_json_DIR "${thirdparty_DIR}/json/build")
@@ -35,6 +35,20 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(fmt)
 
 FetchContent_Declare(
+  readerwriterqueue
+  GIT_REPOSITORY https://github.com/cameron314/readerwriterqueue
+  GIT_TAG        v1.0.6
+)
+FetchContent_MakeAvailable(readerwriterqueue)
+
+FetchContent_Declare(
+  concurrentqueue
+  GIT_REPOSITORY https://github.com/cameron314/concurrentqueue.git
+  GIT_TAG        v1.0.3
+)
+FetchContent_MakeAvailable(concurrentqueue)
+
+FetchContent_Declare(
   yaml-cpp
   GIT_REPOSITORY https://github.com/jbeder/yaml-cpp.git
   GIT_TAG        yaml-cpp-0.7.0
@@ -49,7 +63,7 @@ target_include_directories(OptFunctions PUBLIC
     "${PROJECT_SOURCE_DIR}/include"
 )
 
-target_link_libraries(OptFunctions Boost::date_time AbcFunctions nlohmann_json::nlohmann_json yaml-cpp fmt::fmt)
+target_link_libraries(OptFunctions Boost::date_time AbcFunctions nlohmann_json::nlohmann_json readerwriterqueue concurrentqueue yaml-cpp fmt::fmt)
 
 set(installable_libs OptFunctions)
 install(TARGETS ${installable_libs} DESTINATION lib/pro/module_b)
