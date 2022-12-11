@@ -10,7 +10,10 @@ int main(int argc, char const *argv[]) {
   // test2();
   // test3();
   // test4();
-  // test5();
+  // test7();
+  // test8();
+  // test9();
+  test10();
   // if (argc < 2) {
   //   // report version
   //   std::cout << argv[0] << " Version " << CppProject_VERSION_MAJOR << "."
@@ -30,7 +33,7 @@ int main(int argc, char const *argv[]) {
   // const double outputValue = mysqrt(inputValue);
   // std::cout << "The square root of " << inputValue << " is " << outputValue
   //           << std::endl;
-  ThreadBase tb;
-  tb.BaseTest();
+  // ThreadBase tb;
+  // tb.BaseTest();
   return 0;
 }

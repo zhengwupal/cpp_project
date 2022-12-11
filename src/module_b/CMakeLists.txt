@@ -63,7 +63,7 @@ target_include_directories(OptFunctions PUBLIC
     "${PROJECT_SOURCE_DIR}/include"
 )
 
-target_link_libraries(OptFunctions Boost::date_time AbcFunctions nlohmann_json::nlohmann_json readerwriterqueue concurrentqueue yaml-cpp fmt::fmt)
+target_link_libraries(OptFunctions Boost::date_time AbcFunctions nlohmann_json::nlohmann_json yaml-cpp fmt::fmt)
 
 set(installable_libs OptFunctions)
 install(TARGETS ${installable_libs} DESTINATION lib/pro/module_b)
