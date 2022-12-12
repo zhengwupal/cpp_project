@@ -5,6 +5,7 @@
 #include <readerwritercircularbuffer.h>
 #include <readerwriterqueue.h>
 
+#include <boost/asio.hpp>
 #include <boost/date_time/posix_time/posix_time.hpp>
 #include <boost/regex.hpp>
 #include <iostream>
@@ -336,4 +337,13 @@ void test10() {
   for (int i = 0; i != ConsumerCount; ++i) {
     consumers[i].join();
   }
+}
+
+void test11() {
+  fmt::print("boost::asio\n");
+  boost::asio::thread_pool pool(4);
+  boost::asio::post(pool, test3);
+  boost::asio::post(pool, test4);
+  boost::asio::post(pool, test5);
+  pool.join();
 }
