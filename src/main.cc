@@ -14,7 +14,9 @@ int main(int argc, char const *argv[]) {
   // test8();
   // test9();
   // test10();
-  test11();
+  // test11();
+  no_poly();
+  poly();
   // if (argc < 2) {
   //   // report version
   //   std::cout << argv[0] << " Version " << CppProject_VERSION_MAJOR << "."

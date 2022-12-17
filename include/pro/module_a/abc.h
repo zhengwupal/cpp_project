@@ -12,5 +12,7 @@ void test8();
 void test9();
 void test10();
 void test11();
+void no_poly();
+void poly();
 
 #endif  // INCLUDE_PRO_MODULE_A_ABC_H_

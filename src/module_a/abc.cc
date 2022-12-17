@@ -347,3 +347,7 @@ void test11() {
   boost::asio::post(pool, test5);
   pool.join();
 }
+
+void no_poly() {}
+
+void poly() {}
