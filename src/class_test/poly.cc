@@ -27,13 +27,32 @@ void no_poly() {
 void poly() {
   std::vector<std::shared_ptr<Quote>> pv;
 
-  for (unsigned i = 1; i != 10; ++i)
+  for (unsigned i = 1; i != 2; ++i)
     pv.push_back(
         std::make_shared<Bulk_quote>(Bulk_quote("sss", i * 10.1, 10, 0.3)));
 
-  double total_p = 0;
-  for (auto p : pv) {
-    total_p += p->net_price(20);
-  }
-  std::cout << total_p << std::endl;
+  // double total_p = 0;
+  // for (auto p : pv) {
+  //   total_p += p->net_price(20);
+  // }
+  // std::cout << total_p << std::endl;
 }
+
+class A {
+ public:
+  // default constructor
+  A() : s("default") {}
+
+  // copy constructor
+  A(const A& o) : s(o.s) { std::cout << "move failed!\n"; }
+
+  // move constructor
+  A(A&& o) : s(std::move(o.s)) {}
+
+  std::string printObj() { return s; }
+
+ private:
+  std::string s;
+};
+
+A temp(A a) { return a; }

@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "cppproject_config.h"
+#include "pro/class_test/poly.h"
 #include "pro/module_a/abc.h"
 #include "pro/module_b/def.h"
 #include "pro/mythread/thread_base.h"
@@ -15,8 +16,9 @@ int main(int argc, char const *argv[]) {
   // test9();
   // test10();
   // test11();
-  no_poly();
-  poly();
+  // no_poly();
+  // poly();
+  std_move();
   // if (argc < 2) {
   //   // report version
   //   std::cout << argv[0] << " Version " << CppProject_VERSION_MAJOR << "."
