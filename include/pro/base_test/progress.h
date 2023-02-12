@@ -1,0 +1,6 @@
+#ifndef INCLUDE_PRO_BASE_TEST_PROGRESS_H_
+#define INCLUDE_PRO_BASE_TEST_PROGRESS_H_
+
+void multiprogress();
+
+#endif  // INCLUDE_PRO_BASE_TEST_PROGRESS_H_

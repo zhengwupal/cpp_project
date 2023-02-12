@@ -1,6 +1,8 @@
 #include <iostream>
 
 #include "cppproject_config.h"
+#include "pro/base_test/move.h"
+#include "pro/base_test/progress.h"
 #include "pro/class_test/poly.h"
 #include "pro/module_a/abc.h"
 #include "pro/module_b/def.h"
@@ -19,6 +21,7 @@ int main(int argc, char const *argv[]) {
   // no_poly();
   // poly();
   std_move();
+  multiprogress();
   // if (argc < 2) {
   //   // report version
   //   std::cout << argv[0] << " Version " << CppProject_VERSION_MAJOR << "."
