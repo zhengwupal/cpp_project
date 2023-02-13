@@ -8,17 +8,17 @@
 
 static std::mutex mtx;
 void PrintTask(int num) {
-  for (size_t i = 0; i < num; i++) {
-    std::cout << "num: " << i << std::endl;
-  }
-  std::cout << "=================" << std::endl;
-
-  // ThreadMutex lock(mtx);
   // for (size_t i = 0; i < num; i++) {
-  //   std::cout << "num: " << num << std::endl;
+  //   std::cout << "num: " << i << std::endl;
   // }
+  // std::cout << "=================" << std::endl;
 
-  // std::cout << "child thread " << std::this_thread::get_id() << std::endl;
+  ThreadMutex lock(mtx);
+  for (size_t i = 0; i < num; i++) {
+    std::cout << "num: " << num << std::endl;
+  }
+
+  std::cout << "child thread " << std::this_thread::get_id() << std::endl;
 }
 
 void ThreadBase::BaseTest() {

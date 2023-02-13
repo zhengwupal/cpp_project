@@ -5,7 +5,7 @@
 
 void std_move() {
   std::string str = "test";
-  std::string&& r = std::move(str);
+  std::string &&r = std::move(str);
   std::cout << r << std::endl;
   std::cout << str << std::endl;
   std::string t(std::move(r));
