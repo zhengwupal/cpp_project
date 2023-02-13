@@ -56,6 +56,7 @@ add_subdirectory(test/module_b)
 add_subdirectory(test/mythread)
 ########################################
 
+########################################
 install(FILES "${PROJECT_BINARY_DIR}/cppproject_config.h"
     DESTINATION include
 )
@@ -66,3 +67,4 @@ set(CPACK_PACKAGE_VERSION_MAJOR "${CppProject_VERSION_MAJOR}")
 set(CPACK_PACKAGE_VERSION_MINOR "${CppProject_VERSION_MINOR}")
 set(CPACK_SOURCE_GENERATOR "TGZ")
 include(CPack)
+########################################
