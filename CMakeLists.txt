@@ -14,7 +14,8 @@ add_subdirectory(src/class_test)
 add_subdirectory(src/module_a)
 add_subdirectory(src/module_b)
 add_subdirectory(src/mythread)
-list(APPEND LIBS base_test class_test AbcFunctions OptFunctions mythread)
+add_subdirectory(src/design_pattern)
+list(APPEND LIBS base_test class_test AbcFunctions OptFunctions mythread design_pattern)
 
 add_executable(main src/main.cc)
 target_link_libraries(main PUBLIC ${LIBS})
@@ -54,6 +55,10 @@ include(CTest)
 add_subdirectory(test/module_a)
 add_subdirectory(test/module_b)
 add_subdirectory(test/mythread)
+add_subdirectory(test/design_pattern)
+
+list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/modules")
+INCLUDE(CodeCoverage)
 ########################################
 
 ########################################

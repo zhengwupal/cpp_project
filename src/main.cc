@@ -1,4 +1,6 @@
+#include <cstdio>
 #include <iostream>
+#include <vector>
 
 #include "cppproject_config.h"
 #include "pro/base_test/move.h"
@@ -20,7 +22,8 @@ int main(int argc, char const *argv[]) {
   // test11();
   // no_poly();
   // poly();
-  std_move();
+  // std_move();
+  swap();
   // multiprogress();
   // if (argc < 2) {
   //   // report version
@@ -41,8 +44,19 @@ int main(int argc, char const *argv[]) {
   // const double outputValue = mysqrt(inputValue);
   // std::cout << "The square root of " << inputValue << " is " << outputValue
   //           << std::endl;
-  // ThreadBase tb;
-  // tb.BaseTest();
 
+  // int a[3] = {1, 2, 3};
+  // printf("%p\n", a);
+  // printf("%p\n", &a[0]);
+  // printf("%p\n", &a);
+  // printf("%lu\n", sizeof(a));
+  // std::vector<int> b{0, 1};
+  // for (auto i : b) {
+  //   std::cout << i << std::endl;
+  // }
+  // int a = 0x12345678;
+  // char *p = (char *)(&a);
+
+  // printf("%x\n", *p);
   return 0;
 }

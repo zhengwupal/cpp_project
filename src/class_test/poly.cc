@@ -27,9 +27,11 @@ void no_poly() {
 void poly() {
   std::vector<std::shared_ptr<Quote>> pv;
 
-  for (unsigned i = 1; i != 2; ++i)
+  for (unsigned i = 1; i != 2; ++i) {
+    std::cout << i << std::endl;
     pv.push_back(
         std::make_shared<Bulk_quote>(Bulk_quote("sss", i * 10.1, 10, 0.3)));
+  }
 
   // double total_p = 0;
   // for (auto p : pv) {
