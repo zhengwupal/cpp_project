@@ -129,7 +129,7 @@ void test6() {
   bool succeeded =
       q.try_dequeue(number);  // Returns false if the queue was empty
 
-  // assert(succeeded && number == 17);
+  assert(succeeded && number == 17);
 
   // // You can also peek at the front item of the queue (consumer only)
   // int *front = q.peek();

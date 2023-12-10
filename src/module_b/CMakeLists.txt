@@ -21,11 +21,11 @@ find_package(Boost 1.80.0 REQUIRED COMPONENTS date_time)
 
 include(FetchContent)
 FetchContent_Declare(
-  json
+  nlohmann_json
   GIT_REPOSITORY https://github.com/nlohmann/json.git
   GIT_TAG        v3.11.2
 )
-FetchContent_MakeAvailable(json)
+FetchContent_MakeAvailable(nlohmann_json)
 
 FetchContent_Declare(
   fmt

@@ -10,7 +10,7 @@
 #include "pro/module_b/def.h"
 #include "pro/mythread/thread_base.h"
 
-int main(int argc, char const *argv[]) {
+int main(int argc, char const* argv[]) {
   // test1();
   // test2();
   // test3();
@@ -23,7 +23,7 @@ int main(int argc, char const *argv[]) {
   // no_poly();
   // poly();
   // std_move();
-  swap();
+  // swap();
   // multiprogress();
   // if (argc < 2) {
   //   // report version
@@ -58,5 +58,9 @@ int main(int argc, char const *argv[]) {
   // char *p = (char *)(&a);
 
   // printf("%x\n", *p);
+  // for (int i = 0; i < 5; ++i) {
+  //   std::cout << i << std::endl;
+  // }
+
   return 0;
 }
