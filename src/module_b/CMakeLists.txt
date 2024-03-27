@@ -1,4 +1,4 @@
-find_package(Boost 1.80.0 REQUIRED COMPONENTS date_time)
+find_package(Boost 1.74.0 REQUIRED COMPONENTS date_time)
 
 # set(thirdparty_DIR "/home/zhengwu/projects/cpp_project/src/thirdparty")
 # set(nlohmann_json_DIR "${thirdparty_DIR}/json/build")
@@ -48,14 +48,14 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(concurrentqueue)
 
-FetchContent_Declare(
-  yaml-cpp
-  GIT_REPOSITORY https://github.com/jbeder/yaml-cpp.git
-  GIT_TAG        yaml-cpp-0.7.0
-)
-set(YAML_CPP_BUILD_TOOLS OFF)
-set(YAML_CPP_BUILD_TESTS OFF)
-FetchContent_MakeAvailable(yaml-cpp)
+# FetchContent_Declare(
+#   yaml-cpp
+#   GIT_REPOSITORY https://github.com/jbeder/yaml-cpp.git
+#   GIT_TAG        yaml-cpp-0.7.0
+# )
+# set(YAML_CPP_BUILD_TOOLS OFF)
+# set(YAML_CPP_BUILD_TESTS OFF)
+# FetchContent_MakeAvailable(yaml-cpp)
 
 add_library(OptFunctions def.cc)
 
@@ -63,7 +63,7 @@ target_include_directories(OptFunctions PUBLIC
     "${PROJECT_SOURCE_DIR}/include"
 )
 
-target_link_libraries(OptFunctions Boost::date_time AbcFunctions nlohmann_json::nlohmann_json yaml-cpp fmt::fmt)
+target_link_libraries(OptFunctions Boost::date_time AbcFunctions nlohmann_json::nlohmann_json fmt::fmt)
 
 set(installable_libs OptFunctions)
 install(TARGETS ${installable_libs} DESTINATION lib/pro/module_b)

@@ -9,13 +9,15 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 configure_file(cppproject_config.h.in cppproject_config.h)
 
 ########################################
+add_subdirectory(src/base)
 add_subdirectory(src/base_test)
 add_subdirectory(src/class_test)
 add_subdirectory(src/module_a)
 add_subdirectory(src/module_b)
 add_subdirectory(src/mythread)
 add_subdirectory(src/design_pattern)
-list(APPEND LIBS base_test class_test AbcFunctions OptFunctions mythread design_pattern)
+# add_subdirectory(src/ioc)
+list(APPEND LIBS base base_test class_test AbcFunctions OptFunctions mythread design_pattern)
 
 add_executable(main src/main.cc)
 target_link_libraries(main PUBLIC ${LIBS})

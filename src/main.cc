@@ -1,66 +1,45 @@
-#include <cstdio>
 #include <iostream>
-#include <vector>
+#include <boost/di.hpp>
+#include "pro/base/static.h"
 
-#include "cppproject_config.h"
-#include "pro/base_test/move.h"
-#include "pro/base_test/progress.h"
-#include "pro/class_test/poly.h"
-#include "pro/module_a/abc.h"
-#include "pro/module_b/def.h"
-#include "pro/mythread/thread_base.h"
+namespace di = boost::di;
 
-int main(int argc, char const* argv[]) {
-  // test1();
-  // test2();
-  // test3();
-  // test4();
-  // test7();
-  // test8();
-  // test9();
-  // test10();
-  // test11();
-  // no_poly();
-  // poly();
-  // std_move();
-  // swap();
-  // multiprogress();
-  // if (argc < 2) {
-  //   // report version
-  //   std::cout << argv[0] << " Version " << CppProject_VERSION_MAJOR << "."
-  //             << CppProject_VERSION_MINOR << std::endl;
-  //   std::cout << "Usage: " << argv[0] << " number" << std::endl;
-  //   return 1;
-  // }
+class MyClass {
+private:
+    int param1;
+    double param2;
 
-  // // convert input to double
-  // const double inputValue = std::stod(argv[1]);
+public:
+    MyClass(int p1, double p2) : param1(p1), param2(p2) {}
 
-  // // TODO 12: Use mysqrt if USE_MYMATH is defined and sqrt otherwise
+    void displayParams() {
+        std::cout << "Param1: " << param1 << ", Param2: " << param2 << std::endl;
+    }
+};
 
-  // // TODO 6: Replace sqrt with mysqrt
+// 定义依赖注入模块
+class MyModule : public di::config {
+public:
+    auto operator()() const {
+        return di::make_injector(
+            // 绑定类对象到对应的参数
+            di::bind<int>.to(10),
+            di::bind<double>.to(3.14)
+            // 添加其他参数的绑定...
+        );
+    }
+};
 
-  // // calculate square root
-  // const double outputValue = mysqrt(inputValue);
-  // std::cout << "The square root of " << inputValue << " is " << outputValue
-  //           << std::endl;
+int main() {
+    // // 创建依赖注入器
+    // auto injector = di::make_injector(MyModule{}());
 
-  // int a[3] = {1, 2, 3};
-  // printf("%p\n", a);
-  // printf("%p\n", &a[0]);
-  // printf("%p\n", &a);
-  // printf("%lu\n", sizeof(a));
-  // std::vector<int> b{0, 1};
-  // for (auto i : b) {
-  //   std::cout << i << std::endl;
-  // }
-  // int a = 0x12345678;
-  // char *p = (char *)(&a);
+    // // 使用依赖注入器获取类对象
+    // auto obj = injector.create<std::shared_ptr<MyClass>>();
 
-  // printf("%x\n", *p);
-  // for (int i = 0; i < 5; ++i) {
-  //   std::cout << i << std::endl;
-  // }
+    // // 使用对象的方法
+    // obj->displayParams();
+    test();
 
-  return 0;
+    return 0;
 }

@@ -1,7 +1,7 @@
 #include "pro/module_b/def.h"
 
 #include <fmt/core.h>
-#include <yaml-cpp/yaml.h>
+// #include <yaml-cpp/yaml.h>
 
 #include <boost/date_time/posix_time/posix_time.hpp>
 #include <iostream>
@@ -33,10 +33,10 @@ void test2() {
 
   std::cout << std::endl;
 
-  YAML::Node primes = YAML::Load("[2, 3, 5, 7, 11]");
-  for (std::size_t i = 0; i < primes.size(); i++) {
-    std::cout << primes[i].as<int>() << std::endl;
-  }
+  // YAML::Node primes = YAML::Load("[2, 3, 5, 7, 11]");
+  // for (std::size_t i = 0; i < primes.size(); i++) {
+  //   std::cout << primes[i].as<int>() << std::endl;
+  // }
 
   std::cout << "=============================" << std::endl;
 
