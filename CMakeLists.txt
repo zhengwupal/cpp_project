@@ -49,8 +49,8 @@ set(BENCHMARK_ENABLE_GTEST_TESTS OFF)
 set(BENCHMARK_USE_BUNDLED_GTEST OFF)
 FetchContent_MakeAvailable(benchmark)
 
-find_program(MEMORYCHECK_COMMAND valgrind)
-set(MEMORYCHECK_COMMAND_OPTIONS "--trace-children=yes --leak-check=full")
+#find_program(MEMORYCHECK_COMMAND valgrind)
+#set(MEMORYCHECK_COMMAND_OPTIONS "--trace-children=yes --leak-check=full")
 
 include(CTest)
 
@@ -59,8 +59,8 @@ add_subdirectory(test/module_b)
 add_subdirectory(test/mythread)
 add_subdirectory(test/design_pattern)
 
-list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/modules")
-INCLUDE(CodeCoverage)
+#list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/modules")
+#INCLUDE(CodeCoverage)
 ########################################
 
 ########################################
