@@ -5,6 +5,7 @@ target_include_directories(base_test PUBLIC
     "${PROJECT_SOURCE_DIR}/include"
 )
 
+find_package(fmt CONFIG REQUIRED)
 target_link_libraries(base_test fmt::fmt)
 
 install(TARGETS base_test DESTINATION lib/pro/base_test)

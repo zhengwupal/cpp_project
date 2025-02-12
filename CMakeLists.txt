@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.29)
 
 project(CppProject VERSION 1.2 LANGUAGES C CXX)
 # project(cpp_primer VERSION 1.0 LANGUAGES C CXX CUDA)
@@ -17,6 +17,7 @@ add_subdirectory(src/module_b)
 add_subdirectory(src/mythread)
 add_subdirectory(src/design_pattern)
 # add_subdirectory(src/ioc)
+
 list(APPEND LIBS base base_test class_test AbcFunctions OptFunctions mythread design_pattern)
 
 add_executable(main src/main.cc)
@@ -31,23 +32,23 @@ install(TARGETS main DESTINATION bin)
 ########################################
 
 ########################################
-include(FetchContent)
-FetchContent_Declare(
-  googletest
-  GIT_REPOSITORY https://github.com/google/googletest.git
-  GIT_TAG        release-1.12.1
-)
-FetchContent_MakeAvailable(googletest)
-
-FetchContent_Declare(
-  benchmark
-  GIT_REPOSITORY https://github.com/google/benchmark.git
-  GIT_TAG        v1.7.1
-)
-set(BENCHMARK_ENABLE_TESTING OFF)
-set(BENCHMARK_ENABLE_GTEST_TESTS OFF)
-set(BENCHMARK_USE_BUNDLED_GTEST OFF)
-FetchContent_MakeAvailable(benchmark)
+#include(FetchContent)
+#FetchContent_Declare(
+#  googletest
+#  GIT_REPOSITORY https://github.com/google/googletest.git
+#  GIT_TAG        release-1.12.1
+#)
+#FetchContent_MakeAvailable(googletest)
+#
+#FetchContent_Declare(
+#  benchmark
+#  GIT_REPOSITORY https://github.com/google/benchmark.git
+#  GIT_TAG        v1.7.1
+#)
+#set(BENCHMARK_ENABLE_TESTING OFF)
+#set(BENCHMARK_ENABLE_GTEST_TESTS OFF)
+#set(BENCHMARK_USE_BUNDLED_GTEST OFF)
+#FetchContent_MakeAvailable(benchmark)
 
 #find_program(MEMORYCHECK_COMMAND valgrind)
 #set(MEMORYCHECK_COMMAND_OPTIONS "--trace-children=yes --leak-check=full")

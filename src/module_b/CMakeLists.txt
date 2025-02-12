@@ -1,4 +1,6 @@
-find_package(Boost 1.74.0 REQUIRED COMPONENTS date_time)
+find_package(Boost CONFIG COMPONENTS date_time)
+find_package(fmt CONFIG REQUIRED)
+find_package(nlohmann_json CONFIG REQUIRED)
 
 # set(thirdparty_DIR "/home/zhengwu/projects/cpp_project/src/thirdparty")
 # set(nlohmann_json_DIR "${thirdparty_DIR}/json/build")
@@ -18,44 +20,6 @@ find_package(Boost 1.74.0 REQUIRED COMPONENTS date_time)
 # if(fmt_FOUND)
 #     message("-- Found fmt")
 # endif(fmt_FOUND)
-
-include(FetchContent)
-FetchContent_Declare(
-  nlohmann_json
-  GIT_REPOSITORY https://github.com/nlohmann/json.git
-  GIT_TAG        v3.11.2
-)
-FetchContent_MakeAvailable(nlohmann_json)
-
-FetchContent_Declare(
-  fmt
-  GIT_REPOSITORY https://github.com/fmtlib/fmt.git
-  GIT_TAG        9.1.0
-)
-FetchContent_MakeAvailable(fmt)
-
-FetchContent_Declare(
-  readerwriterqueue
-  GIT_REPOSITORY https://github.com/cameron314/readerwriterqueue
-  GIT_TAG        v1.0.6
-)
-FetchContent_MakeAvailable(readerwriterqueue)
-
-FetchContent_Declare(
-  concurrentqueue
-  GIT_REPOSITORY https://github.com/cameron314/concurrentqueue.git
-  GIT_TAG        v1.0.3
-)
-FetchContent_MakeAvailable(concurrentqueue)
-
-# FetchContent_Declare(
-#   yaml-cpp
-#   GIT_REPOSITORY https://github.com/jbeder/yaml-cpp.git
-#   GIT_TAG        yaml-cpp-0.7.0
-# )
-# set(YAML_CPP_BUILD_TOOLS OFF)
-# set(YAML_CPP_BUILD_TESTS OFF)
-# FetchContent_MakeAvailable(yaml-cpp)
 
 add_library(OptFunctions def.cc)
 
